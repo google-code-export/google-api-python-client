@@ -1,0 +1,9 @@
+syntax: glob
+
+*.pyc
+.*.swp
+*/.git/*
+.gitignore
+samples/cmdline/*.dat
+htmlcov/*
+.coverage
