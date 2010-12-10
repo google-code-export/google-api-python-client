@@ -1,0 +1,13 @@
+TODO
+====
+
+ - LICENSE file
+
+ - OAuth cmdline sample should start local http server to catch response.
+
+ - Caching of discovery doc
+
+ - Examples of caching
+
+ - 2.x and 3.x compatible
+
