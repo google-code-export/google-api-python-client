@@ -1,0 +1,12 @@
+syntax: glob
+
+*.pyc
+*.dat
+.*.swp
+*/.git/*
+.gitignore
+samples/buzz/*.dat
+samples/moderator/*.dat
+htmlcov/*
+.coverage
+database.sqlite3
