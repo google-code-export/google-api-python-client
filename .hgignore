@@ -1,0 +1,18 @@
+syntax: glob
+
+*.pyc
+*.dat
+.*.swp
+*/.git/*
+*/.cache/*
+.gitignore
+samples/buzz/*.dat
+samples/moderator/*.dat
+htmlcov/*
+.coverage
+database.sqlite3
+build/*
+googlecode_upload.py
+google_api_python_client.egg-info/*
+dist/*
+MANIFEST
