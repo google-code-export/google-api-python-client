@@ -1,0 +1,190 @@
+{
+ "name": "zoo",
+ "version": "v1",
+ "description": "Zoo API used for testing",
+ "restBasePath": "/zoo",
+ "rpcPath": "/rpc",
+ "methods": {
+  "query": {
+   "restPath": "query",
+   "rpcMethod": "bigquery.query",
+   "httpMethod": "GET",
+   "parameters": {
+    "q": {
+     "type": "string",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false
+    },
+    "i": {
+     "type": "integer",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false,
+     "minimum": "0",
+     "maximum": "4294967295",
+     "default": "20"
+    },
+    "n": {
+     "type": "number",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false
+    },
+    "b": {
+     "type": "boolean",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false
+    },
+    "a": {
+     "type": "any",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false
+    },
+    "o": {
+     "type": "object",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false
+    },
+    "e": {
+     "type": "string",
+     "restParameterType": "query",
+     "required": false,
+     "repeated": false,
+     "enum": [
+       "foo",
+       "bar"
+     ]
+    }
+   }
+  }
+ },
+ "resources": {
+  "my": {
+   "resources": {
+    "favorites": {
+     "methods": {
+      "list": {
+       "restPath": "favorites/@me/mine",
+       "rpcMethod": "zoo.animals.mine",
+       "httpMethod": "GET",
+       "parameters": {
+        "max-results": {
+          "restParameterType": "query",
+          "required": false
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "animals": {
+   "methods": {
+    "crossbreed": {
+     "restPath": "/animals/crossbreed",
+     "rpcMethod": "zoo.animals.crossbreed",
+     "httpMethod": "GET",
+     "parameters": {
+      "father": {
+       "restParameterType": "query",
+       "required": false
+      },
+      "mother": {
+       "restParameterType": "query",
+       "required": false
+      }
+     }
+    },
+    "delete": {
+     "restPath": "/animals/{name}",
+     "rpcMethod": "zoo.animals.delete",
+     "httpMethod": "DELETE",
+     "parameters": {
+      "name": {
+       "restParameterType": "path",
+       "pattern": "[^/]+",
+       "required": true
+      }
+     }
+    },
+    "get": {
+     "restPath": "/animals/{name}",
+     "rpcMethod": "zoo.animals.get",
+     "httpMethod": "GET",
+     "parameters": {
+      "name": {
+       "restParameterType": "path",
+       "pattern": "[^/]+",
+       "required": true
+      },
+      "projection": {
+       "restParameterType": "query",
+       "required": false
+      }
+     }
+    },
+    "insert": {
+     "restPath": "/animals",
+     "rpcMethod": "zoo.animals.insert",
+     "httpMethod": "POST",
+     "parameters": {
+      "photo": {
+       "restParameterType": "query",
+       "required": false
+      }
+     }
+    },
+    "list": {
+     "restPath": "/animals",
+     "rpcMethod": "zoo.animals.list",
+     "httpMethod": "GET",
+     "parameters": {
+      "max-results": {
+       "restParameterType": "query",
+       "required": false
+      },
+      "name": {
+       "restParameterType": "query",
+       "required": false
+      },
+      "projection": {
+       "restParameterType": "query",
+       "required": false
+      },
+      "start-token": {
+       "restParameterType": "query",
+       "required": false
+      }
+     }
+    },
+    "update": {
+     "restPath": "/animals/{animal.name}",
+     "rpcMethod": "zoo.animals.update",
+     "httpMethod": "PUT"
+    }
+   }
+  },
+  "load": {
+   "methods": {
+    "list": {
+     "restPath": "/load",
+     "rpcMethod": "zoo.load.list",
+     "httpMethod": "GET"
+    }
+   }
+  },
+  "loadNoTemplate": {
+   "methods": {
+    "list": {
+     "restPath": "/loadNoTemplate",
+     "rpcMethod": "zoo.loadNoTemplate.list",
+     "httpMethod": "GET"
+    }
+   }
+  }
+ }
+}
